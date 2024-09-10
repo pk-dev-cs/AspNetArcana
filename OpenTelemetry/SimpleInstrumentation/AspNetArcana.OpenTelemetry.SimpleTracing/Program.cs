@@ -1,9 +1,19 @@
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
+using System.Diagnostics;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddOpenTelemetry()
+    .ConfigureResource(x => x.AddService("AspNetArcana.OpenTelemetry.SimpleTracing"))
+    .WithTracing(x => x.AddAspNetCoreInstrumentation()
+        .AddConsoleExporter()
+        .AddOtlpExporter(x => x.Endpoint = new Uri("http://jaeger:4317")));
 
 var app = builder.Build();
 
@@ -23,6 +33,7 @@ var summaries = new[]
 
 app.MapGet("/weatherforecast", () =>
 {
+    Activity.Current?.SetTag("client.id", 69);
     var forecast = Enumerable.Range(1, 5).Select(index =>
         new WeatherForecast
         (

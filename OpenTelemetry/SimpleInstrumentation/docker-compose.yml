@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  aspnetarcana.opentelemetry.simpletracing:
+    image: ${DOCKER_REGISTRY-}aspnetarcanaopentelemetrysimpletracing
+    build:
+      context: AspNetArcana.OpenTelemetry.SimpleTracing
+      dockerfile: Dockerfile
+  jaeger:
+    image: jaegertracing/all-in-one:1.58.0
+    ports:
+        - "16686:16686" #Jaeger Web UI
