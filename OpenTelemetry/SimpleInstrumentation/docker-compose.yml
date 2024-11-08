@@ -1,12 +1,34 @@
 version: '3.4'
 
 services:
+  aspnetarcana.opentelemetry.simplemetrics:
+    image: ${DOCKER_REGISTRY-}aspnetarcanaopentelemetrysimplemetrics
+    ports:
+      - "8082:8082"
+      - "8083:8083"
+    build:
+      context: AspNetArcana.OpenTelemetry.SimpleMetrics
+      dockerfile: Dockerfile
+
   aspnetarcana.opentelemetry.simpletracing:
     image: ${DOCKER_REGISTRY-}aspnetarcanaopentelemetrysimpletracing
+    ports:
+      - "8080:8080"
+      - "8081:8081"
     build:
       context: AspNetArcana.OpenTelemetry.SimpleTracing
       dockerfile: Dockerfile
+
   jaeger:
     image: jaegertracing/all-in-one:1.58.0
     ports:
         - "16686:16686" #Jaeger Web UI
+  prometheus:
+    image: prom/prometheus:v2.53.0
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+  

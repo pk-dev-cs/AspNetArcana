@@ -7,6 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetArcana.OpenTelemetry.
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{485AEFCC-CD4C-4A3F-AF6C-4B7C88C1319D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{58084590-37A6-4B76-BE3A-A2BA7D97034D}"
+	ProjectSection(SolutionItems) = preProject
+		prometheus.yml = prometheus.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetArcana.OpenTelemetry.SimpleMetrics", "AspNetArcana.OpenTelemetry.SimpleMetrics\AspNetArcana.OpenTelemetry.SimpleMetrics.csproj", "{CB2EB840-E66D-46AF-936F-A4510DFFA6DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +28,10 @@ Global
 		{485AEFCC-CD4C-4A3F-AF6C-4B7C88C1319D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{485AEFCC-CD4C-4A3F-AF6C-4B7C88C1319D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{485AEFCC-CD4C-4A3F-AF6C-4B7C88C1319D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB2EB840-E66D-46AF-936F-A4510DFFA6DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB2EB840-E66D-46AF-936F-A4510DFFA6DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB2EB840-E66D-46AF-936F-A4510DFFA6DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB2EB840-E66D-46AF-936F-A4510DFFA6DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
