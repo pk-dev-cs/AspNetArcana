@@ -11,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddOpenTelemetry()
-    .ConfigureResource(x => x.AddService("AspNetArcana.OpenTelemetry.SimpleTracing"))
+    .ConfigureResource(x => x.AddService("AspNetArcana.OpenTelemetry.SimpleMetrics"))
     .WithMetrics(metrics =>
         metrics
         .AddAspNetCoreInstrumentation()
