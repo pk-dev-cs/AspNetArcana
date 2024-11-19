@@ -1,7 +1,5 @@
-using OpenTelemetry.Resources;
-using OpenTelemetry.Trace;
-using AspNetArcana.OpenTelemetry.SimpleMetrics.Diagnostics;
-using OpenTelemetry.Metrics;
+using Serilog;
+using Serilog.Sinks.Grafana.Loki;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,15 +8,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddOpenTelemetry()
-    .ConfigureResource(x => x.AddService("AspNetArcana.OpenTelemetry.SimpleMetrics"))
-    .WithMetrics(metrics =>
-        metrics
-        .AddAspNetCoreInstrumentation()
-        .AddHttpClientInstrumentation()
-        .AddMeter(ApplicationDiagnostics.Meter.Name)
-            .AddConsoleExporter()
-            .AddPrometheusExporter());
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.GrafanaLoki(
+        "http://loki:3100",
+        new[]
+        {
+            new LokiLabel { Key = "app", Value = "simplelogging" },
+            new LokiLabel { Key = "environment", Value = "development" }
+        })
+    .CreateLogger();
+
+builder.Logging.ClearProviders(); // Remove default logging providers
+builder.Logging.AddSerilog();
 
 var app = builder.Build();
 
@@ -29,6 +30,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseHttpsRedirection();
+
 var summaries = new[]
 {
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -36,7 +39,9 @@ var summaries = new[]
 
 app.MapGet("/weatherforecast", () =>
 {
-    ApplicationDiagnostics.ClientsCreatedCounter.Add(1);
+    Log.Information("Application started!");
+    Log.Warning("This is a warning log.");
+    Log.Error("This is an error log.");
 
     var forecast = Enumerable.Range(1, 5).Select(index =>
         new WeatherForecast
@@ -50,8 +55,6 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast")
 .WithOpenApi();
-
-app.UseOpenTelemetryPrometheusScrapingEndpoint();
 
 app.Run();
 

@@ -1,6 +1,15 @@
 version: '3.4'
 
 services:
+  aspnetarcana.opentelemetry.simplelogging:
+    image: ${DOCKER_REGISTRY-}aspnetarcanaopentelemetrysimplelogging
+    ports:
+      - "8084:8084"
+      - "8085:8085"
+    build:
+      context: AspNetArcana.OpenTelemetry.SimpleLogging
+      dockerfile: Dockerfile
+
   aspnetarcana.opentelemetry.simplemetrics:
     image: ${DOCKER_REGISTRY-}aspnetarcanaopentelemetrysimplemetrics
     ports:
@@ -31,4 +40,22 @@ services:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
+ 
+  grafana:
+    image: grafana/grafana:10.4.4
+    volumes:
+      - ./grafana-datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: "Admin"
+    ports:
+      - "3000:3000"
+
+  loki:
+    image: grafana/loki:2.7.1
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+
+
   
