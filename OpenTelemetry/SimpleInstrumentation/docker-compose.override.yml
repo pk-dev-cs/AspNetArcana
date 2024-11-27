@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  aspnetarcana.opentelemetry.simpletracing:
+  dotnetarcana.opentelemetry.simpletracing:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
@@ -13,7 +13,7 @@ services:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
 
-  aspnetarcana.opentelemetry.simplemetrics:
+  dotnetarcana.opentelemetry.simplemetrics:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8082
@@ -25,7 +25,7 @@ services:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
 
-  aspnetarcana.opentelemetry.simplelogging:
+  dotnetarcana.opentelemetry.simplelogging:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8084

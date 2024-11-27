@@ -1,6 +1,0 @@
-@AspNetArcana.OpenTelemetry.SimpleMetrics_HostAddress = http://localhost:5041
-
-GET {{AspNetArcana.OpenTelemetry.SimpleMetrics_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

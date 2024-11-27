@@ -1,31 +1,31 @@
 version: '3.4'
 
 services:
-  aspnetarcana.opentelemetry.simplelogging:
-    image: ${DOCKER_REGISTRY-}aspnetarcanaopentelemetrysimplelogging
+  dotnetarcana.opentelemetry.simplelogging:
+    image: ${DOCKER_REGISTRY-}dotnetarcanaopentelemetrysimplelogging
     ports:
       - "8084:8084"
       - "8085:8085"
     build:
-      context: AspNetArcana.OpenTelemetry.SimpleLogging
+      context: DotnetArcana.OpenTelemetry.SimpleLogging
       dockerfile: Dockerfile
 
-  aspnetarcana.opentelemetry.simplemetrics:
-    image: ${DOCKER_REGISTRY-}aspnetarcanaopentelemetrysimplemetrics
+  dotnetarcana.opentelemetry.simplemetrics:
+    image: ${DOCKER_REGISTRY-}dotnetarcanaopentelemetrysimplemetrics
     ports:
       - "8082:8082"
       - "8083:8083"
     build:
-      context: AspNetArcana.OpenTelemetry.SimpleMetrics
+      context: DotnetArcana.OpenTelemetry.SimpleMetrics
       dockerfile: Dockerfile
 
-  aspnetarcana.opentelemetry.simpletracing:
-    image: ${DOCKER_REGISTRY-}aspnetarcanaopentelemetrysimpletracing
+  dotnetarcana.opentelemetry.simpletracing:
+    image: ${DOCKER_REGISTRY-}dotnetarcanaopentelemetrysimpletracing
     ports:
       - "8080:8080"
       - "8081:8081"
     build:
-      context: AspNetArcana.OpenTelemetry.SimpleTracing
+      context: DotnetArcana.OpenTelemetry.SimpleTracing
       dockerfile: Dockerfile
 
   jaeger:
