@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenTelemetry", "OpenTelemetry", "{CE4871CE-0DD9-4C77-9F25-687BE910393A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logging", "Logging", "{B3A8839F-7CA5-49FF-BAC8-16DA8637E613}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityFramework", "EntityFramework", "{E59362E1-CA51-466A-9438-31FCCE17D062}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleInstrumentation", "SimpleInstrumentation", "{ED12DE62-F341-48BE-BE20-B8288FBAF950}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotnetArcana.OpenTelemetry.SimpleLogging", "OpenTelemetry\SimpleInstrumentation\DotnetArcana.OpenTelemetry.SimpleLogging\DotnetArcana.OpenTelemetry.SimpleLogging.csproj", "{F8B41089-7A02-4107-BC13-1865D381044E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotnetArcana.OpenTelemetry.SimpleMetrics", "OpenTelemetry\SimpleInstrumentation\DotnetArcana.OpenTelemetry.SimpleMetrics\DotnetArcana.OpenTelemetry.SimpleMetrics.csproj", "{813B2305-E216-4ACD-8D59-B92C472E5653}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotnetArcana.OpenTelemetry.SimpleTracing", "OpenTelemetry\SimpleInstrumentation\DotnetArcana.OpenTelemetry.SimpleTracing\DotnetArcana.OpenTelemetry.SimpleTracing.csproj", "{D4347044-8F59-4C29-B0CD-CCA471788B78}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotnetArcana.Logging.BasicLogging", "Logging\DotnetArcana.Logging.BasicLogging\DotnetArcana.Logging.BasicLogging.csproj", "{185FFF27-5F15-4D64-989A-E76BF7BB00B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetArcana.EntityFramework.Sqlite", "EntityFramework\DotnetArcana.EntityFramework.Sqlite\DotnetArcana.EntityFramework.Sqlite.csproj", "{E1345FC0-516D-4A49-A9A2-31C9E22E32A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8B41089-7A02-4107-BC13-1865D381044E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8B41089-7A02-4107-BC13-1865D381044E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8B41089-7A02-4107-BC13-1865D381044E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8B41089-7A02-4107-BC13-1865D381044E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{813B2305-E216-4ACD-8D59-B92C472E5653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{813B2305-E216-4ACD-8D59-B92C472E5653}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{813B2305-E216-4ACD-8D59-B92C472E5653}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{813B2305-E216-4ACD-8D59-B92C472E5653}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4347044-8F59-4C29-B0CD-CCA471788B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4347044-8F59-4C29-B0CD-CCA471788B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4347044-8F59-4C29-B0CD-CCA471788B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4347044-8F59-4C29-B0CD-CCA471788B78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{185FFF27-5F15-4D64-989A-E76BF7BB00B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{185FFF27-5F15-4D64-989A-E76BF7BB00B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{185FFF27-5F15-4D64-989A-E76BF7BB00B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{185FFF27-5F15-4D64-989A-E76BF7BB00B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1345FC0-516D-4A49-A9A2-31C9E22E32A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1345FC0-516D-4A49-A9A2-31C9E22E32A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1345FC0-516D-4A49-A9A2-31C9E22E32A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1345FC0-516D-4A49-A9A2-31C9E22E32A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ED12DE62-F341-48BE-BE20-B8288FBAF950} = {CE4871CE-0DD9-4C77-9F25-687BE910393A}
+		{F8B41089-7A02-4107-BC13-1865D381044E} = {ED12DE62-F341-48BE-BE20-B8288FBAF950}
+		{813B2305-E216-4ACD-8D59-B92C472E5653} = {ED12DE62-F341-48BE-BE20-B8288FBAF950}
+		{D4347044-8F59-4C29-B0CD-CCA471788B78} = {ED12DE62-F341-48BE-BE20-B8288FBAF950}
+		{185FFF27-5F15-4D64-989A-E76BF7BB00B1} = {B3A8839F-7CA5-49FF-BAC8-16DA8637E613}
+		{E1345FC0-516D-4A49-A9A2-31C9E22E32A7} = {E59362E1-CA51-466A-9438-31FCCE17D062}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7A119FC-5A29-4B80-A108-0B1C40430456}
+	EndGlobalSection
+EndGlobal
