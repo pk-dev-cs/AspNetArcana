@@ -7,7 +7,7 @@
     <ProjectGuid>485aefcc-cd4c-4a3f-af6c-4b7c88c1319d</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
-    <DockerServiceName>aspnetarcana.opentelemetry.simpletracing</DockerServiceName>
+    <DockerServiceName>dotnetarcana.opentelemetry.simpletracing</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">
