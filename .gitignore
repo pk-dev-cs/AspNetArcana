@@ -79,10 +79,6 @@ node_modules/
 *.mdf
 *.ldf
 
-# SQLite database files
-*.sqlite
-*.sqlite3
-
 # IIS
 IISExpress/
 
