@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetArcana.Logging.BasicLogging", "AspNetArcana.Logging.BasicLogging\AspNetArcana.Logging.BasicLogging.csproj", "{91B188EE-F31E-4E20-933A-74EDDEB45EB6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91B188EE-F31E-4E20-933A-74EDDEB45EB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91B188EE-F31E-4E20-933A-74EDDEB45EB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91B188EE-F31E-4E20-933A-74EDDEB45EB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91B188EE-F31E-4E20-933A-74EDDEB45EB6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {55AC053D-2C70-4E76-8FB8-9DE9A43D50E6}
+	EndGlobalSection
+EndGlobal
